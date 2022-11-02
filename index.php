@@ -1,3 +1,7 @@
+<?php
+    require_once "database/connect.php";
+    $mysql = new mysqli('localhost','root','','online-books');
+?>
 <!doctype html>
 <html lang="ru">
 <head>
@@ -12,9 +16,9 @@
     <title>Online Books - Книжный магазин</title>
 </head>
 <body>
-<?php include 'header.php'?>
+<?php include 'php/header.php' ?>
 
-<?php include 'footer.php'?>
+<?php include 'php/footer.php' ?>
 <script src="partial/js/bootstrap.bundle.min.js"></script>
 <script src="partial/js/all.min.js"></script>
 </body>
