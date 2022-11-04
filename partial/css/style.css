@@ -2,70 +2,193 @@
     --dark-color: #2D2D2D;
     --color-text: #171717;
     --blue: #485FB0;
+    --dark-blue: #2D3E7C;
     --card-book: #D0D0D0;
 }
 
-@font-face {
-    font-family: 'GillSans';
-    src: url('../fonts/GillSans-Light.eot');
-    src: url('../fonts/GillSans-Light.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/GillSans-Light.svg#GillSans-Light') format('svg'),
-    url('../fonts/GillSans-Light.ttf') format('truetype'),
-    url('../fonts/GillSans-Light.woff') format('woff'),
-    url('../fonts/GillSans-Light.woff2') format('woff2');
-    font-weight: 100;
-    font-style: normal;
-}
+/* FONTS */
 
+/* montserrat-300 - cyrillic */
 @font-face {
-    font-family: 'GillSans';
-    src: url('../fonts/GillSans.eot');
-    src: url('../fonts/GillSans.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/GillSans.svg#GillSans') format('svg'),
-    url('../fonts/GillSans.ttf') format('truetype'),
-    url('../fonts/GillSans.woff') format('woff'),
-    url('../fonts/GillSans.woff2') format('woff2');
+    font-family: 'Montserrat';
+    font-style: normal;
     font-weight: 300;
-    font-style: normal;
+    src: url('../fonts/montserrat-v15-cyrillic-300.eot'); /* IE9 Compat Modes */
+    src: local(''),
+    url('../fonts/montserrat-v15-cyrillic-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/montserrat-v15-cyrillic-300.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/montserrat-v15-cyrillic-300.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/montserrat-v15-cyrillic-300.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/montserrat-v15-cyrillic-300.svg#Montserrat') format('svg'); /* Legacy iOS */
 }
-
+/* montserrat-regular - cyrillic */
 @font-face {
-    font-family: 'GillSans';
-    src: url('../fonts/GillSans-Medium.eot');
-    src: url('../fonts/GillSans-Medium.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/GillSans-Medium.svg#GillSans-Medium') format('svg'),
-    url('../fonts/GillSans-Medium.ttf') format('truetype'),
-    url('../fonts/GillSans-Medium.woff') format('woff'),
-    url('../fonts/GillSans-Medium.woff2') format('woff2');
+    font-family: 'Montserrat';
+    font-style: normal;
     font-weight: 400;
-    font-style: normal;
+    src: url('../fonts/montserrat-v15-cyrillic-regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+    url('../fonts/montserrat-v15-cyrillic-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/montserrat-v15-cyrillic-regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/montserrat-v15-cyrillic-regular.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/montserrat-v15-cyrillic-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/montserrat-v15-cyrillic-regular.svg#Montserrat') format('svg'); /* Legacy iOS */
 }
-
+/* montserrat-700 - cyrillic */
 @font-face {
-    font-family: 'GillSans';
-    src: url('../fonts/GillSans-Bold.eot');
-    src: url('../fonts/GillSans-Bold.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/GillSans-Bold.svg#GillSans-Bold') format('svg'),
-    url('../fonts/GillSans-Bold.ttf') format('truetype'),
-    url('../fonts/GillSans-Bold.woff') format('woff'),
-    url('../fonts/GillSans-Bold.woff2') format('woff2');
-    font-weight: 600;
+    font-family: 'Montserrat';
     font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/montserrat-v15-cyrillic-700.eot'); /* IE9 Compat Modes */
+    src: local(''),
+    url('../fonts/montserrat-v15-cyrillic-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/montserrat-v15-cyrillic-700.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/montserrat-v15-cyrillic-700.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/montserrat-v15-cyrillic-700.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/montserrat-v15-cyrillic-700.svg#Montserrat') format('svg'); /* Legacy iOS */
+}
+/* montserrat-900 - cyrillic */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 900;
+    src: url('../fonts/montserrat-v15-cyrillic-900.eot'); /* IE9 Compat Modes */
+    src: local(''),
+    url('../fonts/montserrat-v15-cyrillic-900.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/montserrat-v15-cyrillic-900.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/montserrat-v15-cyrillic-900.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/montserrat-v15-cyrillic-900.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/montserrat-v15-cyrillic-900.svg#Montserrat') format('svg'); /* Legacy iOS */
 }
 
 body {
-    min-width: 768px;
-    font-family: GillSans, sans-serif;
+    min-width: 375px;
+    font-family: 'Montserrat' !important;
     font-size: 20px;
     background-color: var(--dark-color);
     color: var(--color-text);
-}
-
-.header {
-    background-color: var(--blue);
-    color: var(--bs-white);
+    height: 100vh;
 }
 
 .header-nav {
+    background-color: var(--blue);
+    color: var(--bs-white);
     padding: 24px 0;
 }
+
+.nav-item {
+    width: 100%;
+}
+
+.nav-border {
+    width: 100%;
+}
+
+@media (min-width:768px) {
+    .hidden-md {
+        display: none;
+    }
+}
+
+.nav-border .nav-item.show .nav-link, .nav-border .nav-link.active {
+    width: 100%;
+    color: var(--blue) !important;
+    background-color: transparent;
+    border-bottom: 2px solid var(--blue) !important;
+}
+
+.nav-border .nav-item .nav-link, .nav-border .nav-link {
+    width: 100%;
+    color: var(--dark-color);
+    background-color: transparent;
+    border-bottom: 2px solid var(--dark-color);
+}
+
+.nav-border button {
+    border: 0;
+}
+
+.btn.btn-blue:hover {
+    color: var(--card-book);
+}
+
+.btn-blue {
+    color: #fff;
+    background-color: var(--blue);
+    border-color: var(--blue);
+}
+
+.form-style {
+    width: 100%;
+}
+
+.form-style .nav {
+    padding: 50px 80px 0;
+}
+
+.form-style .modal-inputs {
+    padding: 50px 85px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.form-style .modal-action button {
+    width: 100%;
+}
+
+.form-style .modal-action {
+    padding: 0 80px 50px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.list-reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.search-form {
+    background: transparent;
+    color: white;
+    border: 0;
+    border-bottom: 1px solid;
+    border-radius: 0;
+}
+
+@media (min-width: 576px) {
+    .card-group {
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.card-img {
+    height: 250px;
+}
+
+.card-img-top {
+    height: inherit;
+    object-fit: contain;
+}
+
+.form-container {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: inherit;
+    align-items: flex-start;
+    justify-content: center;
+}
+
