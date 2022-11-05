@@ -7,12 +7,12 @@
         <div class="card mb-3">
             <div class="row g-0">
                 <div class="col-md-4">
-                    <img src="partial/img/<?= $item['img']?>" class="img-fluid rounded-start" alt="<?= $item['name']?>">
+                    <img src="partial/img/<?= $item['img']?>" class="w-100 img-fluid rounded-start" alt="<?= $item['name']?>">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
                         <h5 class="card-title"><?= $item['name']?></h5>
-                        <p class="card-text"><?= $item['description']?></p>
+                        <p class="card-text text-muted"><small><?= $item['description']?></small></p>
                         <p class="card-text">Количество: <?= $item['qty']?></p>
                     </div>
                 </div>
