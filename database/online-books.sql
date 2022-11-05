@@ -30,7 +30,7 @@ CREATE TABLE `author` (
   `author_fio` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`author_id`),
   UNIQUE KEY `id_UNIQUE` (`author_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `author` (
 
 LOCK TABLES `author` WRITE;
 /*!40000 ALTER TABLE `author` DISABLE KEYS */;
-INSERT INTO `author` VALUES (1,'Михаил','Лермонтов','Юрьевич','Лермонтов М.Ю.'),(2,'Лев','Толстой','Николаевич','Толстой Л.Н.'),(3,'Антов','Чехов','Павлович','Чехов А.П.'),(4,'Николай','Гоголь','Васильевич','Гоголь Н.В.'),(5,'Иван','Тургенев','Сергеевич','Тургенев И.С.'),(6,'Иван','Бунин','Алексеевич','Бунин И.А.');
+INSERT INTO `author` VALUES (1,'Михаил','Лермонтов','Юрьевич','Лермонтов М.Ю.'),(2,'Лев','Толстой','Николаевич','Толстой Л.Н.'),(3,'Антов','Чехов','Павлович','Чехов А.П.'),(4,'Николай','Гоголь','Васильевич','Гоголь Н.В.'),(5,'Иван','Тургенев','Сергеевич','Тургенев И.С.'),(6,'Иван','Бунин','Алексеевич','Бунин И.А.'),(7,NULL,NULL,NULL,'Джордж Оруэлл'),(8,NULL,NULL,NULL,'Чарльз Диккенс'),(9,NULL,NULL,NULL,'Оскар Уайльд'),(10,'Александр','Афанасьев','Николаевич','Афанасьев А.Н.'),(11,NULL,NULL,NULL,'Уильям Шекспир'),(12,NULL,NULL,NULL,'Жозеф Бедье'),(13,'Михаил','Булгаков','Афанасьевич','Булгаков М.А.'),(14,NULL,NULL,NULL,'Пруст Марсель'),(15,NULL,NULL,NULL,'Сабатини Рафаэль'),(16,NULL,NULL,NULL,'Марриет Фредерик'),(17,NULL,NULL,NULL,'Марк Твен');
 /*!40000 ALTER TABLE `author` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -52,10 +52,10 @@ DROP TABLE IF EXISTS `book`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `book` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) DEFAULT NULL,
+  `name` varchar(225) DEFAULT NULL,
   `years` year DEFAULT NULL,
   `price` varchar(20) DEFAULT NULL,
-  `description` varchar(200) DEFAULT NULL,
+  `description` varchar(225) DEFAULT NULL,
   `genreId` int unsigned NOT NULL,
   `authorId` int unsigned NOT NULL,
   `publisherId` int unsigned NOT NULL,
@@ -68,7 +68,7 @@ CREATE TABLE `book` (
   CONSTRAINT `book_ibfk_1` FOREIGN KEY (`genreId`) REFERENCES `genre` (`genre_id`) ON DELETE CASCADE ON UPDATE RESTRICT,
   CONSTRAINT `book_ibfk_2` FOREIGN KEY (`authorId`) REFERENCES `author` (`author_id`) ON DELETE CASCADE ON UPDATE RESTRICT,
   CONSTRAINT `book_ibfk_3` FOREIGN KEY (`publisherId`) REFERENCES `publisher` (`publisher_id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -77,7 +77,7 @@ CREATE TABLE `book` (
 
 LOCK TABLES `book` WRITE;
 /*!40000 ALTER TABLE `book` DISABLE KEYS */;
-INSERT INTO `book` VALUES (1,'Отцы и дети',1971,'2000','роман И. С. Тургенева, написанный в 1860—1861 годах и опубликованный в 1862 году в журнале «Русский вестник»',1,5,2,'1.jpg'),(2,'Муму',1952,'1950',' По данным исследователей, в основе произведения лежат реальные события, происходившие в московском доме матери писателя Варвары Петровны Тургеневой',1,5,2,'2.jpg');
+INSERT INTO `book` VALUES (1,'Отцы и дети',1971,'560','роман И. С. Тургенева, написанный в 1860—1861 годах и опубликованный в 1862 году в журнале «Русский вестник»',1,5,2,'1.jpg'),(2,'Муму',1952,'780',' По данным исследователей, в основе произведения лежат реальные события, происходившие в московском доме матери писателя Варвары Петровны Тургеневой',1,5,2,'2.jpg'),(3,'1984',2022,'688','«1984» — роман-антиутопия Джорджа Оруэлла, изданный в 1949 году.',8,7,4,'3.jpg'),(4,'Кентервильское привидение',1970,'816','Американская семья покупает старинный замок Кентервиль, в котором уже триста лет бродит таинственный призрак, наводя ужас на обитателей.',15,9,6,'4.jpg'),(5,'Соловей и роза',2020,'485','Легендарный английский писатель, поэт, драматург и философ Оскар Уайльд (1854-1900) начал сочинять сказки после того, как на свет появились его сыновья Сирил и Вивиан.',15,9,6,'5.jpg'),(6,'Тристан и Изольда',2022,'450','Пронзительная история любви двух молодых людей, разворачивающаяся на фоне кровопролитной войны английского и ирландского народов.',6,12,2,'6.jpg'),(7,'Записки юного врача',2021,'408','Эти семь маленьких шедевров Михаил Булгаков создал в юности, хотя через много лет отредактировал заново.',15,13,4,'7.jpg');
 /*!40000 ALTER TABLE `book` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -89,10 +89,10 @@ DROP TABLE IF EXISTS `city`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `city` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `idcity_UNIQUE` (`id`)
+  `city_id` int unsigned NOT NULL AUTO_INCREMENT,
+  `city_name` varchar(255) NOT NULL,
+  PRIMARY KEY (`city_id`),
+  UNIQUE KEY `idcity_UNIQUE` (`city_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -123,9 +123,12 @@ CREATE TABLE `customer` (
   `login` varchar(20) NOT NULL,
   `pass` varchar(255) DEFAULT NULL,
   `address` varchar(20) DEFAULT NULL,
+  `cityId` int unsigned DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `login` (`login`),
-  UNIQUE KEY `id_UNIQUE` (`id`)
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  KEY `customer_ibfk_1_idx` (`cityId`),
+  CONSTRAINT `customer_ibfk_1` FOREIGN KEY (`cityId`) REFERENCES `city` (`city_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -135,7 +138,7 @@ CREATE TABLE `customer` (
 
 LOCK TABLES `customer` WRITE;
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
-INSERT INTO `customer` VALUES (1,'Админ','Админ','Админ','71111111111','test@mail.ru','admin','5452ad34517aac553c7eba902d34f526','улица'),(7,'Вадим','','Валерьевич','','','3','5452ad34517aac553c7eba902d34f526',''),(8,'','','','','','12312312','211fc15acc566ad767a0cca96d52cee4',''),(16,'Имя','Фамилия','Отчество','+7(111) 111-1111','test@mail.ru','testUser','9aac9cad49a54417ad416f43bced84dc','улица'),(17,'Имя','Фамилия','-','+7(111) 111-1111','testr@mail.ru','testUser1','9aac9cad49a54417ad416f43bced84dc','улица'),(24,'','','','','','123','211fc15acc566ad767a0cca96d52cee4',''),(27,'','','','','','testUser4','984822adeaa867ac6a798d6af533e11b',''),(28,'','','','','','admin7','d464ef67d258ddfa2c992e6978d13b1f','');
+INSERT INTO `customer` VALUES (1,'Админ','Админ','Админ','71111111111','test@mail.ru','admin','5452ad34517aac553c7eba902d34f526','улица',NULL),(7,'Вадим','','Валерьевич','','','3','5452ad34517aac553c7eba902d34f526','',NULL),(8,'','','','','','12312312','211fc15acc566ad767a0cca96d52cee4','',NULL),(16,'Имя','Фамилия','Отчество','+7(111) 111-1111','test@mail.ru','testUser','9aac9cad49a54417ad416f43bced84dc','улица',NULL),(17,'Имя','Фамилия','-','+7(111) 111-1111','testr@mail.ru','testUser1','9aac9cad49a54417ad416f43bced84dc','улица',NULL),(24,'','','','','','123','211fc15acc566ad767a0cca96d52cee4','',NULL),(27,'','','','','','testUser4','984822adeaa867ac6a798d6af533e11b','',NULL),(28,'','','','','','admin7','d464ef67d258ddfa2c992e6978d13b1f','',NULL);
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -151,7 +154,7 @@ CREATE TABLE `genre` (
   `genre_name` varchar(255) NOT NULL,
   PRIMARY KEY (`genre_id`),
   UNIQUE KEY `id_UNIQUE` (`genre_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -160,7 +163,7 @@ CREATE TABLE `genre` (
 
 LOCK TABLES `genre` WRITE;
 /*!40000 ALTER TABLE `genre` DISABLE KEYS */;
-INSERT INTO `genre` VALUES (1,'Художественная литература'),(2,'Общество'),(3,'Психология'),(4,'Наука'),(5,'Детективы'),(6,'Романтика'),(7,'Драма');
+INSERT INTO `genre` VALUES (1,'Художественная литература'),(2,'Общество'),(3,'Психология'),(4,'Наука'),(5,'Детективы'),(6,'Романтика'),(7,'Драма'),(8,'Классика'),(9,'Фантастика'),(10,'Поэзия'),(11,'Юмор. Сатира'),(12,'Комиксы'),(13,'Кулинария'),(14,'Философия'),(15,'Мистика'),(16,'Триллер'),(17,'Приключения'),(18,'Боевик');
 /*!40000 ALTER TABLE `genre` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -252,4 +255,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-05 20:30:46
+-- Dump completed on 2022-11-06  3:16:47
