@@ -1,4 +1,11 @@
-<?php include 'php/header.php' ?>
+<?php include 'php/header.php' ;
+
+error_reporting(-1);
+
+if (!$_SESSION['user']) {
+    header('Location: /online-books');
+}
+?>
 <main class="main">
     <div class="container mt-5">
         <div class="row">
