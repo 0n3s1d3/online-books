@@ -30,7 +30,7 @@
                     unset($_SESSION['cart.sum']);
                     unset($_SESSION['cart.qty']);
                 }
-                require_once 'cart_modal.php';
+                require_once 'page-cart.php';
                 break;
         }
     }

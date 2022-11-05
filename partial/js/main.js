@@ -30,29 +30,13 @@ $(function () {
         });
     });
 
-    $('#get-cart').on('click', function (e) {
-        e.preventDefault();
-
-        $.ajax({
-            url: 'cart.php',
-            type: 'GET',
-            data: {cart: 'show'},
-            success: function (result) {
-                showCart(result);
-            },
-            error: function () {
-                console.log('error');
-            }
-        });
-    });
-
-    $('#cartModal .modal-cart-content').on('click', '#clear-cart', function () {
+    $('#clear-cart').on('click', function () {
         $.ajax({
             url: 'cart.php',
             type: 'GET',
             data: {cart: 'clear'},
             success: function (result) {
-                showCart(result);
+                location.reload();
             },
             error: function () {
                 console.log('error');

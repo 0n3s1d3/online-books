@@ -13,7 +13,6 @@
     $count = count($user) == 0 || count($user) == 1;
 
     if ($count) {
-
         $_SESSION['message'] = "Логин или пароль введены неверно";
         header('Location: /online-books/login.php');
     } else {
@@ -30,8 +29,8 @@
 
         setcookie('user', $user['name'], time() + 3600, "/");
 
-//        // Cookie живет 1 сутки
-//        // setcookie('user', $user['name'], time() + 3600 * 24);
+        // Cookie живет 1 сутки
+        // setcookie('user', $user['name'], time() + 3600 * 24);
 
         $mysql->close();
 

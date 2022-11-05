@@ -10,7 +10,6 @@
     <div class="card-body">
         <p>Привет, <?= $_SESSION['user']['login']?></p>
     </div>
-
 </div>
 <?php include 'php/footer.php'?>
 
