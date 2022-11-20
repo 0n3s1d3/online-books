@@ -37,7 +37,7 @@ if (!$_SESSION['user']) {
                                     <p class="card-text m-0"><?= $book['price']?>р.</p>
                                     <div class="btn-group">
                                         <a class="btn btn-primary me-2 add-to-cart" href="?cart=add$id=<?= $book['id']?>" data-id="<?= $book['id']?>"><i class="fa-solid fa-cart-shopping me-2"></i>Купить</a>
-                                        <a class="btn btn-secondary pointer-event-none"><i class="fa-solid fa-angle-right p-1"></i></a>
+                                        <a class="btn btn-secondary" href="php/template.php"><i class="fa-solid fa-angle-right p-1"></i></a>
                                     </div>
                                 </div>
                             </div>

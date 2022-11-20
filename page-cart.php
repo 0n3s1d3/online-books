@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once "php/funcs.php";
 if (!$_SESSION['user']) {
     header('Location: /online-books');
 }

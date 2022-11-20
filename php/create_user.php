@@ -10,6 +10,7 @@
     $pass = filter_var(trim($_POST['pass']), FILTER_SANITIZE_STRING);
     $pass_confirm = filter_var(trim($_POST['pass_confirm']), FILTER_SANITIZE_STRING);
     $address = filter_var(trim($_POST['address']), FILTER_SANITIZE_STRING);
+    $cityId = filter_var(trim($_POST['cityId']), FILTER_SANITIZE_STRING);
 
     if (mb_strlen($pass) > 5 && mb_strlen($pass_confirm) > 5 && $pass === $pass_confirm) {
         $pass = md5($pass . "lfo12ek3s");
@@ -19,8 +20,8 @@
         $result = $mysql->query("SELECT * FROM `customer` WHERE `login` = '$login'");
         $user = $result->fetch_assoc(); // Конвертируем в массив
 
-        $result2 = $mysql->query("INSERT INTO `customer` (`name`, `surname`, `patronymic`, `phone`, `email`, `login`, `pass`, `address`)
-                          VALUES ('$name', '$surname', '$patronymic', '$phone', '$email', '$login', '$pass', '$address') ");
+        $result2 = $mysql->query("INSERT INTO `customer` (`name`, `surname`, `patronymic`, `phone`, `email`, `login`, `pass`, `address`, `cityId`)
+                          VALUES ('$name', '$surname', '$patronymic', '$phone', '$email', '$login', '$pass', '$address', 1) ");
         $mysql->close();
         $_SESSION['success'] = "Регистрация прошла успешно!";
         header('Location: /online-books/login.php');
