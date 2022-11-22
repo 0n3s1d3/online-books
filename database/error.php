@@ -5,6 +5,6 @@
 	<title>Ошибка подключения</title>
 </head>
 <body>
-	<p><?php echo $error; ?></p>
+	<p><?php $error; ?></p>
 </body>
 </html>

@@ -28,12 +28,13 @@ require_once 'modals/cart_form.php'
 
             <div class="btn-group">
                 <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                    <img src="partial/img/non-avatar.svg" class="rounded-circle"
+                    <img src="partial/img/avatars/<?= $_SESSION['user']['avatar']?>" class="rounded-circle" style="height: 30px;"
                          alt="Avatar" />
                     <?= $_SESSION['user']['name']?>
                     <span class="pin-cart position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger btn-qty"><?= $_SESSION['cart.qty'] ?? ''?></span>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
+                    <li><a class="btn dropdown-item link-item" href="catalog.php?id=<?= $_SESSION['user']['id']?>">Каталог <i class="fa-solid fa-store"></i></a></li>
                     <li><a class="btn dropdown-item link-item" href="profile.php?id=<?= $_SESSION['user']['id']?>">Профиль <i class="fa-solid fa-user fa-fw"></i></a></li>
                     <li class="position-relative"><a class="dropdown-item link-item" href="page-cart.php?id=<?= $_SESSION['user']['id']?>">Корзина
                         <?php if (isset($_SESSION['cart.qty']) > 0): ?>

@@ -10,7 +10,7 @@
     $result = $mysql->query("SELECT * FROM `customer` WHERE `login` = '$login' AND `pass` = '$pass'");
     $user = $result->fetch_assoc();
 
-    $count = count($user) == 0 || count($user) == 1;
+    $count = empty($user) || count($user) < 2;
 
     if ($count) {
         $_SESSION['message'] = "Логин или пароль введены неверно";
@@ -25,6 +25,8 @@
             'email' => $user['email'],
             'login' => $user['login'],
             'address' => $user['address'],
+            'avatar' => $user['avatar'],
+            'city_name' => $user['city_name'],
         ];
 
         setcookie('user', $user['name'], time() + 3600, "/");
@@ -36,7 +38,4 @@
 
         header('Location: /online-books/profile.php?id='.$_SESSION['user']['id']);
     }
-?>
-
-
 

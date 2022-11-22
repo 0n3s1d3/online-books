@@ -30,22 +30,6 @@ $(function () {
         });
     });
 
-    $('#send_order').submit(function(e) { //устанавливаем событие отправки для формы с id=form
-        e.preventDefault()
-        var form_data = $(this).serialize(); //собераем все данные из формы
-        $.ajax({
-            type: 'POST', //Метод отправки
-            url: 'send.php', //путь до php файла
-            data: form_data,
-            success: function(data) {
-                alert('Заказ отправлен');
-            },
-            error: function () {
-                console.log('error');
-            }
-        });
-    });
-
     $('#clear-cart').on('click', function () {
         $.ajax({
             url: 'cart.php',
@@ -59,4 +43,35 @@ $(function () {
             }
         });
     });
+
+    $('#send_order').submit(function(e) {
+        e.preventDefault()
+        var form_data = $(this).serialize();
+        $.ajax({
+            type: 'POST',
+            url: 'send.php',
+            data: form_data,
+            success: function(data) {
+                alert('Заказ отправлен');
+            },
+            error: function () {
+                console.log('error');
+            }
+        });
+    });
+
+    $('#clear-order').on('click', function () {
+        $.ajax({
+            url: 'cart.php',
+            type: 'GET',
+            data: {cart: 'clear'},
+            success: function (result) {
+                location.reload();
+            },
+            error: function () {
+                console.log('error');
+            }
+        });
+    });
+
 });

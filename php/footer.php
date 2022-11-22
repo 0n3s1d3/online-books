@@ -26,6 +26,28 @@
 <script>
     $(function() {
         $("#phone").mask("+7(999) 999-9999");
+
+        $('.pass-confirm-control').on('click', function () {
+            if ($('.pass-confirm-input').attr('type') == 'password') {
+                $('.pass-confirm-icon').removeClass('fa-eye').addClass('fa-eye-slash')
+                $('.pass-confirm-input').attr('type', 'text');
+            } else {
+                $('.pass-confirm-icon').addClass('fa-eye').removeClass('fa-eye-slash')
+                $('.pass-confirm-input').attr('type', 'password');
+            }
+            return false;
+        });
+
+        $('.pass-control').on('click', function () {
+            if ($('.pass-input').attr('type') == 'password') {
+                $('.pass-icon').removeClass('fa-eye').addClass('fa-eye-slash')
+                $('.pass-input').attr('type', 'text');
+            } else {
+                $('.pass-icon').addClass('fa-eye').removeClass('fa-eye-slash')
+                $('.pass-input').attr('type', 'password');
+            }
+            return false;
+        });
     });
 </script>
 </body>
